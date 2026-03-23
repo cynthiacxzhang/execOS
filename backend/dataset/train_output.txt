@@ -1,0 +1,54 @@
+Loading data from adhd_checkins_labeled.csv ...
+  480 rows, 4 classes, 5 features
+
+Evaluating rules-based classifier ...
+Training Random Forest ...
+
+============================================================
+RULES-BASED CLASSIFIER (current baseline)
+============================================================
+  Overall accuracy: 75.2%
+  Stage Label                     Accuracy
+  --------------------------------------------------
+  1     Initiation Failure        80.0%  (96/120)
+  2     Decision Paralysis        65.0%  (78/120)
+  3     Overwhelm Freeze          75.8%  (91/120)
+  4     Urgency Dependency        80.0%  (96/120)
+
+============================================================
+RANDOM FOREST CLASSIFIER
+============================================================
+  Training set:       384 rows
+  Test set:           96 rows
+  5-fold CV accuracy: 87.0% ± 3.4%
+  Test accuracy:      89.6%
+
+  Classification report:
+                        precision    recall  f1-score   support
+
+    Initiation Failure      0.917     0.917     0.917        24
+    Decision Paralysis      0.875     0.875     0.875        24
+      Overwhelm Freeze      0.913     0.875     0.894        24
+    Urgency Dependency      0.880     0.917     0.898        24
+
+              accuracy                          0.896        96
+             macro avg      0.896     0.896     0.896        96
+          weighted avg      0.896     0.896     0.896        96
+
+  Confusion matrix (rows=actual, cols=predicted):
+           S1  S2  S3  S4
+    S1 actual   22    0    0    2
+    S2 actual    0   21    2    1
+    S3 actual    1    2   21    0
+    S4 actual    1    1    0   22
+
+  Feature importances:
+    anxiety      0.328  █████████████
+    overwhelm    0.203  ████████
+    energy       0.200  ████████
+    focus        0.143  █████
+    mood         0.126  █████
+
+============================================================
+  Random Forest is 14.4% better than rules-based on test set.
+============================================================

@@ -15,7 +15,9 @@
       "Bash(curl -s -X POST http://localhost:8000/recommendations/generate \\\\\n  -H \"Content-Type: application/json\" \\\\\n  -d '{\"checkin_id\": 1}' | python3 -m json.tool)",
       "Bash(curl -s -X POST http://localhost:8000/outcomes \\\\\n  -H \"Content-Type: application/json\" \\\\\n  -d '{\"recommendation_id\": 1, \"task_id\": 3, \"started\": true, \"completed\": false, \"helped\": true, \"notes\": \"The 2-min reframe got me unstuck\"}' | python3 -m json.tool)",
       "Bash(curl -s http://localhost:8000/analytics/summary | python3 -m json.tool)",
-      "Bash(uv add:*)"
+      "Bash(uv add:*)",
+      "Bash(.venv/bin/python -m pytest app/tests/ -v)",
+      "Bash(cd:*)"
     ]
   }
 }
